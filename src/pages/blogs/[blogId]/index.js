@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 const BlogDetail = () => {
@@ -5,7 +6,15 @@ const BlogDetail = () => {
 
   const blogId = router.query.blogId;
 
-  return <h1>details about blog {blogId}</h1>;
+  return (
+    <>
+      <h1>details about Blog {blogId}</h1>
+      <Link href={"/blogs"}>
+        {" "}
+        <p>BlogList</p>{" "}
+      </Link>
+    </>
+  );
 };
 
 export default BlogDetail;
